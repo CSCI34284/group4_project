@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{scrextend}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[obeyspaces]{url}
+\usepackage[margin=1.25in]{geometry}
+
+\pagestyle{fancy}
+\lfoot{\small\scshape SDP}
+\cfoot{}
+\rfoot{\footnotesize \thepage}
+\lhead{\small\scshape CSCI 3428}
+\chead{}
+\rhead{\footnotesize Software Engineering}
+\renewcommand{\headrulewidth}{.3pt}
+\renewcommand{\footrulewidth}{.3pt}
+\setlength\voffset{-0.25in}
+\setlength\textheight{648pt}
+
+\begin{document}
+
+\title{CSCI 3428 - Software Development Plan}
+\author{Group 4}
+\date{Monday 7 \textsuperscript{th} October 2019}
+\maketitle
+
+\fancypagestyle{plain}{
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[r]{\footnotesize \thepage} % except the right
+\fancyfoot[l]{\small\scshape SDP} % and left
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{.3pt}}
+
+\section{Schedule}
+
+See figure on final page.
+
+\section{Team Organisation}
+With a larger than standard group, we are able to delegate more members to work on the front-end of
+the project, focusing specifically on creating a user-interface that is well-suited to the needs of
+each of the individual clients. The underlying core functionality will likely be the same for each
+of the users, and so fewer back-end developers are required. A larger group also grants more
+flexibility for group-members to move back and forth between the different development areas, as
+there is unlikely to be a shortage of people able to work on any one aspect of the project at any
+given time. This means that, if a member decides they would like to move from front-end to back-end
+to implement a novel idea, they are free to do so (within reason).
+
+A larger group presents management challenges, however, and can slow the ideation and implementation
+processes. As a result, we are tentatively considering dividing into two smaller sub-teams, that
+will each focus independently on development for a specific client. This will likely
+happen later in the development process, once a baseline for the UI and functionality has been
+established, and the focus turns to tuning the software according to the client’s needs.
+
+\subsection{Roles}
+\textbf{Leader(s):}
+\begin{addmargin}[1em]{2em} Undecided \end{addmargin}\vspace{2mm}
+\textbf{Front-end Developers:}
+\begin{addmargin}[1em]{2em} Gautham Chalapathy, Lulu Chen, Akhtar Rafid, Yilin Zhang
+\end{addmargin}\vspace{2mm}
+\textbf{Back-end Developers:}
+\begin{addmargin}[1em]{2em} Veronica Hatala, Martin McLaren, Sheldon Taylor, Kreetish Venkataswami
+\end{addmargin}\vspace{2mm}
+\textbf{Server-side Developers:}
+\begin{addmargin}[1em]{2em} Sarah Clarke, Martin McLaren, Kreetish Venkataswami
+\end{addmargin}\vspace{2mm}
+\textbf{Specialists:}
+\begin{addmargin}[1em]{2em} Gautham Chalapathy, Sarah Clarke \end{addmargin}\vspace{2mm}
+
+\section{Configuration Management Plan}
+
+\subsection{GitHub}
+Given the scale of the project and the size of the group, a mechanism for sharing code is required
+to ensure that development progresses efficiently. GitHub is an obvious choice for such a platform,
+and will act as the main hub for the project. Other attendant benefits include the ability to track
+any changes made to the code, revert to an earlier version in case of serious error, and ensure that
+all progress is saved in the event of data loss. Lastly, the ubiquity of the platform and the number
+of resources available that document its functionality means the overhead cost of learning to use
+GitHub is relatively small compared to the benefits gained.
+
+\subsection{Agile}
+From a group-management perspective, we plan to broadly follow the Agile framework. Outside of
+providing a general strategy for managing the development process, an iterative approach is
+particularly well suited for the schedule we are following. Any existing functionality (as will be
+given in the early prototypes, for example) will need to be changed as both the clients
+understanding of the product and our understanding of their specific needs develop.
+
+\subsection{Django}
+Lastly, we are considering building our web application using the Django framework. In general,
+developing under a web framework ensures a consistency in both the design and functionality of the
+various aspects of our project (through the use of standard libraries, for instance). They
+additionally provide tools that makes creating databases and handling user management more
+efficient, both of which are key challenges our project faces. Django in particular is well-suited
+for our needs, as it uses a Python back-end that is relatively simple to learn and automatically
+solves many of the various security considerations.
+
+\section{Risk Management Plan}
+
+While it is difficult to assess potential risks while the details of the group's organisation and
+ultimate goal are still being assessed, we can identify several general obstacles that
+we might face:
+
+\subsection{Withdrawal}
+\textit{Probability:} Low (\textless20\%) \begin{addmargin}[1em]{2em} Given the nature of the course
+(third year, no examinations, single large-scale project), and that we are a third of the way
+through the semester, it is unlikely that a group member will withdraw from the course going
+forward.\end{addmargin}\vspace{2mm}
+\noindent \textit{Impact:} Low (2/5) \begin{addmargin}[1em]{2em}Though a withdrawal would
+typically have a large negative impact on the progress of the group’s development, a large group
+means that a single member’s responsibilities can be distributed across the team without putting too
+much burden on the other members.\end{addmargin}\vspace{2mm}
+\noindent \textit{Mitigation:} \begin{addmargin}[1em]{2em} Discuss with the team prior to delegating
+responsibilities and beginning development to assess any potential challenges they might face both
+in the course and outside of it that might push them to consider withdrawing, and
+discuss possible solutions (assigning less work, getting extra support, etc.).\end{addmargin}
+
+\subsection{Data Loss}
+\textit{Probability:} Medium (50\%) \begin{addmargin}[1em]{2em} The loss of data, whether through
+broken, lost, or faulty equipment, is a common occurrence, and one that is difficult to predict.
+\end{addmargin}\vspace{2mm}
+\noindent \textit{Impact:} High (4/5) \begin{addmargin}[1em]{2em} Without taking the proper
+precautions, data loss presents one of the most substantial risks to the project, threatening
+weeks of progress, and resulting in large set backs, or an inability to meet the requirements.
+\end{addmargin}\vspace{2mm}
+\noindent \textit{Mitigation:} \begin{addmargin}[1em]{2em} Protecting against data loss is becoming
+increasingly easier with the wide availability of cloud services and the reduced cost of storage
+media. Additionally, distributing new code to each member of the group using GitHub lessens any
+potential impact.\end{addmargin}
+
+\subsection{Late-Stage Changes in Client's Needs}
+\textit{Probability:} High (\textgreater60\%) \begin{addmargin}[1em]{2em} A client’s needs change on
+a regular basis, and this is particularly true for a product that is custom-designed for them. While
+such a change is not itself a problem, a large-scale change late in the development cycle can pose a
+significant setback.\end{addmargin}\vspace{2mm}
+\noindent \textit{Impact:} Medium (3/5) \begin{addmargin}[1em]{2em} Depending on the
+scale, and the time during the development cycle in which they are brought up,
+this could represent a serious setback to the group, potentially requiring ground-up changes in
+functionality or design. Alternatively, small-scale changes can be implemented at virtually any
+point in the development cycle at little extra cost.\end{addmargin}\vspace{2mm}
+\noindent \textit{Mitigation:} \begin{addmargin}[1em]{2em} Involve clients at every point of the
+development cycle (within reason), determine a set of core needs that won’t change, and work on
+addressing these first. Communicate with clients what a reasonable set of expectations for the
+product looks like, and what the team is able to achieve given the time constraints. \end{addmargin}
+
+\subsection{Failure to Meet Deadline}
+\textit{Probability:} Very Low (\textless10\%) \begin{addmargin}[1em]{2em} With the size of the
+group, the importance of the project, and the schedule created, it is unlikely that the base project
+will be incomplete by the deadline.\end{addmargin}\vspace{2mm}
+\noindent \textit{Impact:} Very High (5/5) \begin{addmargin}[1em]{2em} A non-functioning product, or
+one that doesn't meet the client's specifications represents a significant failure to complete the
+project. \end{addmargin}\vspace{2mm}
+\noindent \textit{Mitigation:} \begin{addmargin}[1em]{2em} Create a detailed plan that specifies the
+key features of the project. Ensure each group member has a clear idea of what their
+responsibilities are, and where in the development process they should be at various stages.
+Ensure resources are allocated appropriately, and address any problems as they
+arise.\end{addmargin}
+
+\section{Installation and Maintenance Plan}
+
+The project is a web application that will be hosted on the undergraduate computer science student's
+server at Saint Mary's University (\url{ugdev.cs.smu.ca}). The details of how the project's
+databases and server-side components will be implemented will be decided at a later stage.
+In addition, documentation will be created that details the purpose of each component of the
+project, including both its structure and its functionality. This documentation will be available
+within the source code, and also as a separate document that can be found on the project's GitHub
+repository.
+
+\end{document}
