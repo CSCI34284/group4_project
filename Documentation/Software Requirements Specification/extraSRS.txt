@@ -1,0 +1,21 @@
+2.0 Description
+
+A free messaging app tailored to the needs and wants of the three residents 
+of the Northwood Long-Term Care Facility which allows them to message and 
+send images to their family and friends.
+
+Simple.Interactive.Customizable
+
+2.1 User Needs
+
+The user requires an instant messaging app that will allow them to communicate
+to their family and friends via the internet ; they want to be able to send
+and receive both text messages and images. 
+
+3.2 Functional Requirements
+
+- Send and receive text messages
+- Send and receive images
+- Change display mode to images only
+- Change display mode to text and images
+- Minimize/Close window
