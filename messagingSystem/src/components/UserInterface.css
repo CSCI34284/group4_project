@@ -52,5 +52,13 @@
 
 .userInterfaceContent {
   width: 70%;
+}
+
+.userInterfaceBlank {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 30%;
+  width: 70%;
   background-color: #f0f2f5;
 }

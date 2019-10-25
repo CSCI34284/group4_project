@@ -45,7 +45,7 @@ class UserInterface extends React.Component {
       type: 'userInterface/selectCommunication',
       payload: from
     });
-    this.getMessages(from)
+    this.getMessages(from);
   }
 
   render() {
@@ -73,8 +73,8 @@ class UserInterface extends React.Component {
             )}
           </Menu>
         </Sider>
-        <Content className={styles.userInterfaceContent}>{(this.props.userInterface.select === null)?<a/>:
-          <Communication from={this.props.userInterface.select}/>}</Content>
+        {(this.props.userInterface.select === null)?
+          <div className={styles.userInterfaceBlank}/>: <Communication from={this.props.userInterface.select}/>}
       </Layout>
     </Layout>
   }
