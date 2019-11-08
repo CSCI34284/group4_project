@@ -1,3 +1,3 @@
 "# messagingSystem" 
 
-DELETE "messagingSystem" floder before npm install!!!!!!!!!
+DELETE "messagingSystem" folder before npm install!!!!!!!!!
