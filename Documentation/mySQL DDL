@@ -1,0 +1,54 @@
+/* Create tables */
+
+CREATE TABLE Chats (
+  chat_id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  u_id1 INT UNSIGNED NOT NULL,
+  u_id2 INT UNSIGNED NOT NULL,
+  unread1 INT DEFAULT 0 NOT NULL,
+  unread2 INT DEFAULT 0 NOT NULL
+);
+
+CREATE TABLE Users (
+  u_id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name VARCHAR(30)NOT NULL,
+  password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Messages(
+  chat_id INT UNSIGNED NOT NULL,
+  content VARCHAR(100),
+  isImage BOOLEAN,
+  sender_id INT UNSIGNED NOT NULL,
+  date_time VARCHAR(30) NOT NULL,
+
+  FOREIGN KEY (chat_id)
+    REFERENCES Chats(chat_id),
+
+  FOREIGN KEY (sender_id)
+    REFERENCES Users(u_id)
+);
+
+
+/* Test data */
+
+INSERT INTO Users(name, password) VALUES ("Bob", "111");
+INSERT INTO Users(name, password) VALUES ("Valorie", "222");
+INSERT INTO Users(name, password) VALUES ("May", "333");
+
+INSERT INTO Chats(u_id1, u_id2) VALUES (1, 2);
+INSERT INTO Chats(u_id1, u_id2) VALUES (1, 3);
+INSERT INTO Chats(u_id1, u_id2) VALUES (2, 3);
+
+
+/*  Wipe everything */
+
+DELETE FROM Users;
+DELETE FROM Chats;
+DELETE FROM Messages;
+DROP TABLE Users;
+DROP TABLE Chats;
+DROP TABLE Messages;
+
+
+/* This database is not yet compatible with storing images, 
+which may need to be stored as BLOBs, image paths, or URLs */
