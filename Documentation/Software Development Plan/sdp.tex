@@ -25,7 +25,7 @@
 
 \title{CSCI 3428 - Software Development Plan}
 \author{Group 4}
-\date{Monday 7 \textsuperscript{th} October 2019}
+\date{Monday 18\textsuperscript{th} November 2019}
 \maketitle
 
 \fancypagestyle{plain}{
@@ -40,38 +40,79 @@
 See figure on final page.
 
 \section{Team Organisation}
-With a larger than standard group, we are able to delegate more members to work on the front-end of
-the project, focusing specifically on creating a user-interface that is well-suited to the needs of
-each of the individual clients. The underlying core functionality will likely be the same for each
-of the users, and so fewer back-end developers are required. A larger group also grants more
-flexibility for group-members to move back and forth between the different development areas, as
-there is unlikely to be a shortage of people able to work on any one aspect of the project at any
-given time. This means that, if a member decides they would like to move from front-end to back-end
-to implement a novel idea, they are free to do so (within reason).
+With a larger group, it is possible to delegate more members to work on the front-end of the project,
+focusing specifically on creating a user-interface that is well-suited to the needs of each of the
+individual clients. The underlying core functionality will likely be the same for each of the users,
+and so fewer back-end developers are required. A larger group also grants more flexibility for
+group-members to move back and forth between the different development areas, as there is unlikely
+to be a shortage of people able to work on any one aspect of the project at any given time. This
+means that, if a member decides they would like to move from front-end to back-end to implement a
+novel idea, they are free to do so (within reason).
 
 A larger group presents management challenges, however, and can slow the ideation and implementation
-processes. As a result, we are tentatively considering dividing into two smaller sub-teams, that
-will each focus independently on development for a specific client. This will likely
+processes. As a result, one possible consideration involves dividing the group into two smaller
+sub-teams, that will each focus independently on development for a specific client. This will likely
 happen later in the development process, once a baseline for the UI and functionality has been
 established, and the focus turns to tuning the software according to the client’s needs.
 
 \subsection{Roles}
 \textbf{Leader(s):}
-\begin{addmargin}[1em]{2em} Undecided \end{addmargin}\vspace{2mm}
+\begin{addmargin}[1em]{2em} Veronica Hatala \end{addmargin}\vspace{2mm}
 \textbf{Front-end Developers:}
 \begin{addmargin}[1em]{2em} Gautham Chalapathy, Lulu Chen, Akhtar Rafid, Yilin Zhang
 \end{addmargin}\vspace{2mm}
 \textbf{Back-end Developers:}
-\begin{addmargin}[1em]{2em} Veronica Hatala, Martin McLaren, Sheldon Taylor, Kreetish Venkataswami
+\begin{addmargin}[1em]{2em} Veronica Hatala, Martin McLaren, Brian Philip, Sheldon Taylor, Kreetish
+Venkataswami
 \end{addmargin}\vspace{2mm}
 \textbf{Server-side Developers:}
-\begin{addmargin}[1em]{2em} Sarah Clarke, Martin McLaren, Brian Philip, Kreetish Venkataswami
+\begin{addmargin}[1em]{2em} Sarah Clarke, Martin McLaren, Brian Philip, Sheldon Taylor, Kreetish
+Venkataswami
 \end{addmargin}\vspace{2mm}
 \textbf{Specialists:}
 \begin{addmargin}[1em]{2em} Gautham Chalapathy, Sarah Clarke \end{addmargin}\vspace{2mm}
 
-\section{Configuration Management Plan}
+\section{Proposed Standards, Procedures, Techniques, and Tools}
+\subsection{Waterfall w/ Phased Development}
+From a group-management perspective, development of the project will occur under the Waterfall
+framework. While an iterative approach provides a standard for adding functionality as the clients'
+understanding of the product develops, phased development streamlines the management of the
+development process into a linear sequence of steps, in turn reducing the complexity of the project.
+Additionally, rigorous planning mitigates the impact of difficulties faced in the program's
+development. Lastly, the Waterfall model emphasises the importance of creating detailed
+documentation outlining the system's functionality, design considerations, and long-term management.
+Given that maintenance of the project upon its completion will not fall to the team's members means
+having such documentation will be especially valuable.
 
+\subsection{React}
+The front-end of the project will be built up using the React library for JavaScript. React
+allows us to encapsulate the layout and structure of the program within a JavaScript function (or
+functions). Doing so allows the front-end (and in particular, input from the users) to be posted
+directly to the server, and in general does away with any intermediary steps in the communication
+between the program on the user's end, and the server and database. This is particularly helpful in
+instant messaging applications, which require frequent communication with the hosting
+server/database.
+
+\subsection{Django}
+User-management, security, and communication between the front-end and the server will be done using
+the Django framework. In general, developing under a web framework ensures a consistency in both the
+design and functionality of the various aspects of our project (through the use of standard
+libraries, for instance). They additionally provide tools that makes creating databases and handling
+user management more efficient, both of which are key challenges the project faces. Django in
+particular is well-suited for these needs, as it uses a Python back-end that is relatively simple to
+learn and automatically solves many of the various security considerations. While there will be some
+initial difficulty merging the front-end that we create using React with the back-end and server
+under the framework, this initial overhead is acceptable considering the gains that will be made
+further along in the development process.
+
+\subsection{MySQL}
+For the purposes of this project, any relation database management system available today would
+present a suitable choice. However, given the wide availability of resources, its accessibility on
+the host-server, and the server-development team's past experience with the software, MySQL will be
+used to create the program's database, and manage user-data (which includes their login credentials,
+contacts, and conversation histories).
+
+\section{Configuration Management Plan}
 \subsection{GitHub}
 Given the scale of the project and the size of the group, a mechanism for sharing code is required
 to ensure that development progresses efficiently. GitHub is an obvious choice for such a platform,
@@ -81,33 +122,24 @@ all progress is saved in the event of data loss. Lastly, the ubiquity of the pla
 of resources available that document its functionality means the overhead cost of learning to use
 GitHub is relatively small compared to the benefits gained.
 
-\subsection{Agile}
-From a group-management perspective, we plan to broadly follow the Agile framework. Outside of
-providing a general strategy for managing the development process, an iterative approach is
-particularly well suited for the schedule we are following. Any existing functionality (as will be
-given in the early prototypes, for example) will need to be changed as both the clients
-understanding of the product and our understanding of their specific needs develop.
-
-\subsection{Django}
-Lastly, we are considering building our web application using the Django framework. In general,
-developing under a web framework ensures a consistency in both the design and functionality of the
-various aspects of our project (through the use of standard libraries, for instance). They
-additionally provide tools that makes creating databases and handling user management more
-efficient, both of which are key challenges our project faces. Django in particular is well-suited
-for our needs, as it uses a Python back-end that is relatively simple to learn and automatically
-solves many of the various security considerations.
+\subsection{Long-Term Management}
+The long-term management of the project will fall to the system administrator, whose duties will
+include user-management (including adding new users, and helping existing users with issues pertaining
+to their accounts), adding or modifying the functionality and appearance of the program, and
+resolving any issues. Along with editing the source files, there may be additional need to migrate
+the project to a new host-machine in the future. The details of this is clarified in section 6
+below.
 
 \section{Risk Management Plan}
-
 While it is difficult to assess potential risks while the details of the group's organisation and
-ultimate goal are still being assessed, we can identify several general obstacles that
-we might face:
+ultimate goal are still being assessed, it is possible to identify several general obstacles that
+the project might face:
 
 \subsection{Withdrawal}
 \textit{Probability:} Low (\textless20\%) \begin{addmargin}[1em]{2em} Given the nature of the course
-(third year, no examinations, single large-scale project), and that we are a third of the way
-through the semester, it is unlikely that a group member will withdraw from the course going
-forward.\end{addmargin}\vspace{2mm}
+(third year, no examinations, single large-scale project), and that the term is nearing its
+completion are a third of the way, it is unlikely that a group member will withdraw from the course
+going forward.\end{addmargin}\vspace{2mm}
 \noindent \textit{Impact:} Low (2/5) \begin{addmargin}[1em]{2em}Though a withdrawal would
 typically have a large negative impact on the progress of the group’s development, a large group
 means that a single member’s responsibilities can be distributed across the team without putting too
@@ -137,7 +169,7 @@ such a change is not itself a problem, a large-scale change late in the developm
 significant setback.\end{addmargin}\vspace{2mm}
 \noindent \textit{Impact:} Medium (3/5) \begin{addmargin}[1em]{2em} Depending on the
 scale, and the time during the development cycle in which they are brought up,
-this could represent a serious setback to the group, potentially requiring ground-up changes in
+this could represent a serious setback to the project, potentially requiring ground-up changes in
 functionality or design. Alternatively, small-scale changes can be implemented at virtually any
 point in the development cycle at little extra cost.\end{addmargin}\vspace{2mm}
 \noindent \textit{Mitigation:} \begin{addmargin}[1em]{2em} Involve clients at every point of the
@@ -160,12 +192,9 @@ arise.\end{addmargin}
 
 \section{Installation and Maintenance Plan}
 
-The project is a web application that will be hosted on the undergraduate computer science student's
-server at Saint Mary's University (\url{ugdev.cs.smu.ca}). The details of how the project's
-databases and server-side components will be implemented will be decided at a later stage.
-In addition, documentation will be created that details the purpose of each component of the
-project, including both its structure and its functionality. This documentation will be available
-within the source code, and also as a separate document that can be found on the project's GitHub
-repository.
+The project is a web application that is be hosted on the undergraduate computer science student's
+server at Saint Mary's University (\url{ugdev.cs.smu.ca/~group4}). The details of how this project's
+databases and server-side components is implemented is clarified within the Installation and
+Maintenance guide.
 
 \end{document}
