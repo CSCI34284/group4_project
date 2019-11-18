@@ -28,7 +28,7 @@
 
 \title{CSCI 3428 - Software Requirements Specification}
 \author{Group 4}
-\date{Wednesday 23\textsuperscript{rd} October 2019}
+\date{Monday 18\textsuperscript{rd} November 2019}
 \maketitle
 
 \fancypagestyle{plain}{
@@ -60,13 +60,15 @@ accessibility features that allow the users to interact with the program by voic
 their specific needs.
 
 \section{Description}
-A free messaging app tailored to the needs and wants of the three residents
-of the Northwood Long-Term Care Facility which allows them to message and
-send images to their family and friends.
+The system is a free instant-messaging platform tailored to the specific needs of residents at the
+Northwood long-term care facility.
+
 \subsection{User Needs}
-The user requires an instant messaging app that will allow them to communicate
-to their family and friends via the internet ; they want to be able to send
-and receive both text messages and images.
+Users of the platform require an instant messaging system that allows them to communicate with
+friends and family via the internet. Specific demands include the ability to send and receive text
+messages and images from a number of different contacts, using separate conversations. Users should
+be able to add or remove contacts as they see fit, and open or close lines of communication with
+these users.
 \section{System Features and Requirements}
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
@@ -83,20 +85,46 @@ clicking the image icon that appears in the top-right corner of the chat window.
   \includegraphics{login}
   \caption{Log-In Page}
 \end{figure}
+
+\noindent \textbf{Details for Login Page:}
+\begin{enumerate}
+    \item Username (name): The user is required to log in with their username credential in order to
+        access the system. Text, size: 30
+    \item Password (password): The user is required to log in with their password credential in
+        order to access the system. Text, size: 50
+    \item A correct combination of a username and its corresponding password is required to be
+        entered to access the system.
+\end{enumerate}
+
 \begin{figure}
     \includegraphics{chat}
     \caption{Conversation Panel}
 \end{figure}
+\pagebreak
+
+\noindent \textbf{Details for Messaging Page:}
+\begin{enumerate}
+    \item Content of the Textbox (content): The user may type text to the input box on the bottom
+        right of the screen. Upon pressing enter, the text is displayed on the right side of the
+        screen. The text is then sent to the recipient, another user of the system, who can view
+        received messages on the left side of the screen in the chronological order of which they
+        were received. Text, size: 100
+\end{enumerate}
 \FloatBarrier
 
 \subsubsection{Software Interfaces}
-The product will be browser-based, and therefore can be used on any hardware with a browser that
-supports the implementation languages. The product will communicate with a MySQL database that will
-be hosted on the \url{ugdev.cs.smu.ca} server.
+The product will be accessed via a web-browser, and can therefore be widely used on most modern
+hardware. Specific requirements include in-browser support for the latest standards of both HTML
+(HTML5) and CSS (CSS3), as well as JavaScript and/or Python web-scripts. Ideal choices include the
+latest desktop versions of both Chrome (\url{v.78}) and Firefox (\url{v.70}), as the project was
+both created and tested on these platform.
 
 \subsubsection{Communication Interfaces}
-To make use of the product, an active internet connection is required. The MySQL database will be
-hosted on the \url{ugdev.cs.smu.ca} server.
+The project's webpage will be hosted on the undergraduate student's server at Saint Mary's
+University, and is accessible at \url{ugdev.cs.smu.ca}. Upon completion of the project, the system
+administrator will be given access to the server, its attendant MySQL database, and the
+user-management framework, to allow for long-term maintenance of the project. See the `Installation
+and Maintenance' document for further details.
 
 \subsection{Functional Requirements}
 
@@ -106,34 +134,66 @@ hosted on the \url{ugdev.cs.smu.ca} server.
 \end{figure}
 
 \subsubsection{Essential}
+The following list represents core-aspects of the system's functionality that must be present in
+order to satisfy the client's requirements, and allow the system to be usable and maintainable over
+the project's life-span (at minimum: 1-year).
 \begin{enumerate}
-    \item Authenticate and log-in user into system
-    \item Allow user to choose and change who they communicate with
-    \item Allow user to send text messages to others
-    \item Allow user to send images to others
-    \item Allow user to receive text messages from others
-    \item Allow user to receive images from others
-    \item Display error message if connection to server fails
-    \item Enable user to log-out of system
+    \item Authenticate and log-in user into system: secures each user account to prevent public
+        access to their communications. A robust user-management framework will further allow
+        wider use of the project outside of its initial scope.
+    \item Allow user to choose and change who they communicate with: provide functionality to allow
+        users to open (or close existing) channels of communication with other users on the
+        platform. Provides greater flexibility, and a potentially wider use-case for the project.
+    \item Allow user to send text messages to others: the key use-requirement for the entire system.
+    \item Allow user to send images to others: the second key use-requirement for the entire system.
+    \item Allow user to receive text messages from others: an extension of the first key
+        use-requirement.
+    \item Allow user to receive images from others: an extension of the second key use-requirement.
+    \item Display error message if connection to server fails: failure to deliver potentially
+        important messages can have serious consequences for the user, so it is crucial to notify
+        the user should the system fail to function, and ideally provide some indication for how the
+        issue can be resolved (i.e.  differentiate between no internet connection vs. a problem on
+        the server's end).
+    \item Enable user to log-out of system: allows use on public machines (e.g. at a library)
+        without compromising the user's private data and conversations.
 \end{enumerate}
 
 \subsubsection{Desirable}
+The following list represents a set of requirements that would make the system more flexible,
+allowing for use that can be tailored to a wider audience. While not an explicit requirements of the
+current three clients, such functionality could expand the project's use.
 \begin{enumerate}
-    \item Allow user to access a settings page
-    \item Allow user to change font size for messaging interface
-\end{enumerate}
-
-\subsubsection{Optional}
-\begin{enumerate}
-    \item Allow user to change background colour of messaging interface
-    \item Allow user to change text colour of messaging interface
+    \item Allow user to access a settings page: provide functionality to allow users to tailor the
+        appearance of the product according to their changing needs. Enables new users to access and
+        use the system according to their own needs.
+    \item Allow user to change font size for messaging interface: improve readability of the
+        displayed text according to user's preferences.
+    \item Allow user to change background colour of messaging interface: improve readability,
+        comfort, and appearance of the system according to user's preferences.
+    \item Allow user to change text colour of messaging interface: improve readability and
+        appearance of the displayed text according to user's preferences.
 \end{enumerate}
 
 \subsection{Performance Requirements}
 The messaging system will be browser-based, and run from the \url{ugdev.cs.smu.ca} server. Initial
 load time will be dependent on the internet connection available to the user, and the stability of
 the hosting server. The performance will additionally be marginally dependent on the hardware
-available to the user to interact with the program.
+available to the user to interact with the program. Additionally, there exist the following
+performance requirements (according to the needs of the system's three core-users):
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Valerie}
+        \subitem System must be readable and usable on a small screen
+        \subitem Use of varied colour palette to distinguish elements for readability
+        \subitem Support for mobile browsing platforms
+    \item \textbf{May}
+        \subitem Ability to favourite/save important messages
+        \subitem Ability to easily navigate through message history/browse old messages
+        \subitem Ability to easily navigate through image history/browse old images
+    \item \textbf{Bob}
+        \subitem High contrast between background and text
+        \subitem Background must be dark, and foreground elements/text must be light
+        \subitem Ability to have separate conversations with different family members
+\end{enumerate}
 
 \subsection{Design Constraints}
 Users must have access to a modern web browser (e.g. Google Chrome, Mozilla Firefox, Safari, or
