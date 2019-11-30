@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar, Upload, Icon, Form, Input, Button, Modal} from 'antd';
+import {Avatar, Upload, Icon, Form, Input, Button, Modal, Spin} from 'antd';
 import CommonStyles from './Communication.css'
 import ValerieStyles from './ValerieCommunication.css';
 import MayStyles from './MayCommunication.css';
@@ -22,8 +22,8 @@ class Communication extends React.Component {
       messages => {
         this.setState({...this.state, messages: messages.reverse()});
         if(!this.state.gotMessage) {
-          this.navigateToBottom();
           this.setState({...this.state, gotMessage: true});
+          this.navigateToBottom();
         }
       },
       message => {
@@ -193,20 +193,21 @@ class Communication extends React.Component {
         <a className={(this.props.userInterface.imageOnly)? styles.pictureOnlyActive:styles.pictureOnlyInactive}
            onClick={()=>this.handleImageOnly()}><Icon type="picture" /></a>
       </div>
-      <div className={styles.communicationContent} id={"messages"}>
-      {messages.map((e,i,arr)=>(
-        <div className={(e.send)? styles.messageRight:styles.messageLeft} key={"message" + i}
-             id={(i === arr.length-1)? "lastMessage":"message" + i}>
-          {(e.isImage)?
-            <img className={styles.image} src={e.content} alt={'missing'}
-                 onClick={() => this.handleImageZoom(e.content)
-                 }/>:
-            <span>{e.content}</span>}
-          <br/>
-          <span className={styles.time}>{this.changeTimeFormatByTime(moment(e.time))}</span>
-        </div>
-      ))}
-      </div>
+      {(!this.state.gotMessage)? <Spin className={styles.communicationContent} size="large" />:
+        <div className={styles.communicationContent} id={"messages"}>
+          {messages.map((e,i,arr)=>(
+            <div className={(e.send)? styles.messageRight:styles.messageLeft} key={"message" + i}
+                 id={(i === arr.length-1)? "lastMessage":"message" + i}>
+              {(e.isImage)?
+                <img className={styles.image} src={e.content} alt={'missing'}
+                     onClick={() => this.handleImageZoom(e.content)
+                     }/>:
+                <span>{e.content}</span>}
+              <br/>
+              <span className={styles.time}>{this.changeTimeFormatByTime(moment(e.time))}</span>
+            </div>
+          ))}
+        </div>}
       <div className={styles.communicationBottom}>
         <Upload accept={"image/*"}
                 name="image"
