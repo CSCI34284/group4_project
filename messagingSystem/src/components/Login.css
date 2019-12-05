@@ -1,6 +1,6 @@
 .logo {
   text-align: center;
-  padding-top:150px;
+  padding-top:120px;
   font-family: Kalam, sans-serif;
   font-size: 75px;
   text-decoration: underline;
@@ -22,4 +22,14 @@ body{
 .loginButton {
   width:100%;
   border-radius: 25px;
+}
+
+input {
+  font-size: 36px !important;
+  height: 50px !important;
+}
+
+button {
+  font-size: 36px !important;
+  height: 50px !important;
 }
