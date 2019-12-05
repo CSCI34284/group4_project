@@ -1,6 +1,6 @@
 .logo {
   text-align: center;
-  padding-top:120px;
+  padding-top:150px;
   font-family: Kalam, sans-serif;
   font-size: 75px;
   text-decoration: underline;
@@ -31,5 +31,5 @@ input {
 
 button {
   font-size: 36px !important;
-  height: 50px !important;
+  height: fit-content !important;
 }
