@@ -1,3 +1,9 @@
+/*
+UserInterface.js
+author: Yilin Zhang
+Commented by: Brian Philip
+ */
+
 import React from 'react';
 import {Layout, Avatar, Dropdown, Menu, Icon, Badge} from 'antd';
 import CommonStyles from './UserInterface.css'

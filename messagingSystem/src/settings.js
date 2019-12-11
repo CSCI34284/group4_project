@@ -1,3 +1,7 @@
+/*
+setting.js
+author: Yilin Zhang, Sheldon Taylor
+ */
 let DEBUG = false;
 let HOST_URL = HOST_URL = "http://140.184.230.209:8000";
 let SOCKET_URL = "ws://140.184.230.209:8000";

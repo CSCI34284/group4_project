@@ -1,3 +1,7 @@
+/*
+websocket.js
+author: Brian Philip
+ */
 import { SOCKET_URL } from "./settings";
 
 class WebSocketService {

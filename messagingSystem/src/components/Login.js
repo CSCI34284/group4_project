@@ -1,3 +1,9 @@
+/*
+Login.js
+author: Yilin Zhang
+Commented by: Brian Philip
+ */
+
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import styles from './Login.css';

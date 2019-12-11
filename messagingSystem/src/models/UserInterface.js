@@ -1,3 +1,8 @@
+/*
+UserInterface.js
+author: Yilin Zhang, Lulu Chen, Akhtar Rafid, Gautham StarShadow
+ */
+
 import * as GlobalServices from "../services/global";
 import WebSocketInstance from "../websocket";
 

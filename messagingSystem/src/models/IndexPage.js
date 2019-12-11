@@ -1,3 +1,8 @@
+/*
+IndexPage.js
+author: Yilin Zhang
+ */
+
 import * as GlobalServices from "../services/global";
 import {message} from "antd";
 

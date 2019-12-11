@@ -1,5 +1,10 @@
+/*
+Communication.js
+author: Yilin Zhang, Lulu Chen, Akhtar Rafid, Gautham StarShadow
+Commented by: Brian Philip
+ */
 import React from 'react';
-import {Avatar, Upload, Icon, Form, Input, Button, Modal, Spin} from 'antd';
+import {Upload, Icon, Form, Input, Button, Modal, Spin} from 'antd';
 import CommonStyles from './Communication.css'
 import ValerieStyles from './ValerieCommunication.css';
 import MayStyles from './MayCommunication.css';
@@ -7,7 +12,6 @@ import BobStyles from './BobCommunication.css';
 import {connect} from "dva";
 import moment from "moment";
 import WebSocketInstance from "../websocket";
-
 
 class Communication extends React.Component {
   state = {

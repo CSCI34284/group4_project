@@ -1,3 +1,7 @@
+/*
+global.js
+author: Yilin Zhang, Sheldon Taylor
+ */
 import request from 'umi-request';
 import { HOST_URL } from "../settings";
 

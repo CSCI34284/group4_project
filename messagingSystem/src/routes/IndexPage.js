@@ -1,3 +1,9 @@
+/*
+IndexPage.js
+author: Yilin Zhang
+Commented by: Brian Philip
+ */
+
 import React from 'react';
 import { connect } from 'dva';
 import Login from "../components/Login";
