@@ -12,6 +12,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[obeyspaces]{url}
 \usepackage[margin=1.25in]{geometry}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}%
 
 \pagestyle{fancy}
 \lfoot{\small\scshape SDP}
@@ -29,7 +36,7 @@
 
 \title{CSCI 3428 - Software Development Plan}
 \author{Group 4}
-\date{Monday 18\textsuperscript{th} November 2019}
+\date{Wednesday 11\textsuperscript{th} December, 2019}
 \maketitle
 
 \fancypagestyle{plain}{
@@ -53,17 +60,19 @@ to be a shortage of people able to work on any one aspect of the project at any 
 means that, if a member decides they would like to move from front-end to back-end to implement a
 novel idea, they are free to do so (within reason).
 
-A larger group presents management challenges, however, and can slow the ideation and implementation
-processes. As a result, one possible consideration involves dividing the group into two smaller
-sub-teams, that will each focus independently on development for a specific client. This will likely
-happen later in the development process, once a baseline for the UI and functionality has been
-established, and the focus turns to tuning the software according to the client’s needs.
+Two prototypes of the final project were developed concurrently by smaller sub-teams in order to
+test various technologies and approaches to setting up the project, and in particular integrating
+the web-facing components with the database and server. This involved performing research into the
+features that these technologies provide, as well as how to implement them within the larger
+structure of the project. The details of these technologies are listed in section 3 below. The first
+sub-team consisted of the project's front-end developers, and the second of the project's back-end
+and server-side developers.
 
 \subsection{Roles}
 \textbf{Leader(s):}
 \begin{addmargin}[1em]{2em} Veronica Hatala \end{addmargin}\vspace{2mm}
 \textbf{Front-end Developers:}
-\begin{addmargin}[1em]{2em} Gautham Chalapathy, Lulu Chen, Akhtar Rafid, Yilin Zhang
+\begin{addmargin}[1em]{2em} Rafid Akhtar, Gautham Chalapathy, Lulu Chen, Yilin Zhang
 \end{addmargin}\vspace{2mm}
 \textbf{Back-end Developers:}
 \begin{addmargin}[1em]{2em} Veronica Hatala, Martin McLaren, Brian Philip, Sheldon Taylor, Kreetish
@@ -109,12 +118,14 @@ initial difficulty merging the front-end that we create using React with the bac
 under the framework, this initial overhead is acceptable considering the gains that will be made
 further along in the development process.
 
-\subsection{MySQL}
-For the purposes of this project, any relation database management system available today would
+\subsection{SQLite}
+For the purposes of this project, any relational database management system available today would
 present a suitable choice. However, given the wide availability of resources, its accessibility on
-the host-server, and the server-development team's past experience with the software, MySQL will be
+the host-server, and the server-development team's past experience with the software, SQLite will be
 used to create the program's database, and manage user-data (which includes their login credentials,
-contacts, and conversation histories).
+contacts, and conversation histories). Additionally, its integration with the Django framework
+allows us to spend more time developing the functionality and appearance of the project, and less
+time initialising and configuring the database.
 
 \section{Configuration Management Plan}
 \subsection{GitHub}
@@ -125,6 +136,13 @@ any changes made to the code, revert to an earlier version in case of serious er
 all progress is saved in the event of data loss. Lastly, the ubiquity of the platform and the number
 of resources available that document its functionality means the overhead cost of learning to use
 GitHub is relatively small compared to the benefits gained.
+
+The source code for the entirety of the project, details of the database implementation, and copies
+of the documentation (in particular: the Installation and Maintenance guide, Software Requirement
+Specification, and this document) will be publicly available on the group's repository. While this
+is intended primarily to serve as a reference for the system administrator, the project is fully free
+and open-sourced (licensed under MIT), and can be accessed via the repository. Find the
+project \MYhref{https://github.com/CSCI34284/group4_project}{here}.
 
 \subsection{Long-Term Management}
 The long-term management of the project will fall to the system administrator, whose duties will
@@ -197,9 +215,9 @@ arise.\end{addmargin}
 \section{Installation and Maintenance Plan}
 
 The project is a web application that is be hosted on the undergraduate computer science student's
-server at Saint Mary's University (\url{ugdev.cs.smu.ca/~group4}). The details of how this project's
-databases and server-side components is implemented is clarified within the Installation and
-Maintenance guide.
+server at Saint Mary's University (\MYhref{https://ugdev.cs.smu.ca/~group4}{link}). The details of
+how this project's databases and server-side components are implemented is clarified within the
+Installation and Maintenance guide.
 
 \pagebreak
 \section*{Appendix}
